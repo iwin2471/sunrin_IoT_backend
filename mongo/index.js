@@ -5,20 +5,18 @@ var name = require('../package.json');
 var db = mongoose.connect('mongodb://localhost/'+name.name);
 mongoose.Promise = global.Promise;
 
-var UsersSchema = mongoose.Schema({
-  id: {type: String},
-  passwd: {type: String},
-  nick_name: {type: String},
-  days: {type: Number},
-  favor: {type: Number},
-  health: {type: Number},
-  dev_availity: {type: Number},
+
+var BoardSchema = mongoose.Schema({
+   date: {type: String},
+   place: {type: String, require: ture},
+   title: {type: String, require: ture},
+   context: {type: String, require: ture},
+   img: [String],
 });
 
+require('./err')(BoardSchema, rndString);
 
-require('./err')(UsersSchema, rndString);
-
-var Users = mongoose.model("users", UsersSchema);
+var Boards = mongoose.model("Boards", BoardSchema);
 
 exports.Users = Users;
 
