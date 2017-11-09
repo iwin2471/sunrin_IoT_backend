@@ -13,9 +13,7 @@ let app = express();
 let router = express.Router();
 
 //module setting
-import {Users} from './mongo';
-let passport = require('./passport')(Users);
-
+import {Boards} from './mongo';
 //function
 require('./func');
 
@@ -36,14 +34,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //router setting
 var index = require('./routes/index')(express.Router());
-var users = require('./routes/users')(express.Router(), Users);
-var auth = require('./routes/auth')(express.Router(), Users, passport);
+var board = require('./routes/board')(express.Router(), Boards);
+var complain = require('./routes/compain')(express.Router());
 
 //router setting
 app.use('/', index);
-app.use('/users', users);
-app.use('/auth', auth);
-
+app.use('/board', board);
+app.use('/complain', complain);
 
 //create server
 app.listen(port);

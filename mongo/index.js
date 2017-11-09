@@ -8,9 +8,9 @@ mongoose.Promise = global.Promise;
 
 var BoardSchema = mongoose.Schema({
    date: {type: String},
-   place: {type: String, require: ture},
-   title: {type: String, require: ture},
-   context: {type: String, require: ture},
+   place: {type: String, require: true},
+   title: {type: String, require: true},
+   context: {type: String, require: true},
    img: [String],
 });
 
@@ -18,6 +18,6 @@ require('./err')(BoardSchema, rndString);
 
 var Boards = mongoose.model("Boards", BoardSchema);
 
-exports.Users = Users;
+exports.Boards = Boards;
 
 export default db;
