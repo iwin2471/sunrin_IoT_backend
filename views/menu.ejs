@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" type="../image/x-icon" href="../image/favicon.ico" />
+    <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="title">
+        <div class="container-out">
+            <div class="container-in">
+                <%= place.name %>           <!-- 이곳에 사용자가 검색한 장소(place)의 이름(name)을 출력하세요. -->
+            </div>
+        </div>
+    </div>
+
+<!--    ↑ 위의 예시
+
+    <div id="title">
+        <div class="container-out">
+            <div class="container-in">
+                선린인터넷고등학교               
+            </div>
+        </div>
+    </div>
+
+-->
+
+
+    <% for (var i = 0; i < place.toilet.length; i++) { %><!-- 사용자가 검색한 장소(place)의 화장실(toilet)의 수 만큼 아래 내용을 복사합니다. -->
+        <div class="toilet">
+            <div class="toilet-name">
+                <div class="container-out">
+                    <div class="container-in">
+                        <%= place.toilet[i].name %> <%= place.toilet[i].useing %><!-- 화장실의 위치(toilet[i].name)와 사용중인 변기의 수(toilet[i].useing)를 출력하세요. -->
+                    </div>
+                </div>
+            </div>
+            <div class="toilet-room">
+                <div class="container-out">
+                    <div class="container-in">
+                        막힌 변기 수 : <%= place.toilet[i].clogged %>개<br/>       <!-- 그 화장실의 막힌 변기의 개수(clogged)를 출력하세요. -->
+                        전등의 상태 : <%= place.toilet[i].light %>               <!-- 그 화장실의 전등의 상태(light)를 출력하세요. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+
+<!--    ↑ 위의 예시
+
+    <% for (var i = 0; i < place.toilet.length; i++) { %>
+        <div class="toilet">
+            <div class="toilet-name">
+                1호관 2층 남자화장실 0/5
+            </div>
+            <div class="toilet-room">
+                막힌 변기 수 : 0개<br/>
+                전등의 상태 : 양호
+            </div>
+        </div>
+    <% } %>
+
+-->
+
+<!--    ↑ 위의 예시 2
+
+    <% for (var i = 0; i < place.toilet.length; i++) { %>
+        <div class="toilet">
+            <div class="toilet-name">
+                2호관 3층 여자화장실 2/3
+            </div>
+            <div class="toilet-room">
+                막힌 변기 수 : 1개<br/>
+                전등의 상태 : 위험
+            </div>
+        </div>
+    <% } %>
+
+-->
+
+</body>
+</html>
