@@ -3,7 +3,7 @@ module.exports = (router, Users, passport) =>{
       const data = req.body;
       const new_user = new Users(data);
       try{
-        cosnt result = await new_user.save();
+        var result = await new_user.save();
       }catch(e){
         if(e instanceof user_duplicate) return res.status(409).json({message:"already exist"});
         if(e instanceof ValidationError) return res.status(400).json({message: e.message});

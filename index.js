@@ -14,6 +14,7 @@ let router = express.Router();
 
 //module setting
 import {Users} from './mongo';
+let passport = require('./passport')(Users);
 
 //function
 require('./func');
@@ -36,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //router setting
 var index = require('./routes/index')(express.Router());
 var users = require('./routes/users')(express.Router(), Users);
-var auth = require('./routes/auth')(express.Router(), Users);
+var auth = require('./routes/auth')(express.Router(), Users, passport);
 
 //router setting
 app.use('/', index);

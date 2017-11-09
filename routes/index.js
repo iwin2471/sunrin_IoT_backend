@@ -1,6 +1,6 @@
 module.exports = (router)=>{
-  router.get('/', function(req, res, next) {
-    await res.render({home});
+  router.get('/', async function(req, res, next) {
+     return await res.render("index");
   })
 
   return router;

@@ -20,12 +20,12 @@
     "passport": "*",
     "passport-facebook-token": "*",
     "passport-github-token": "*",
+    "passport-local": "^1.0.0",
     "passport-twitter-token": "*",
     "randomstring": "*",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-function-bind": "^6.22.0",
