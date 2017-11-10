@@ -17,7 +17,7 @@ import {Boards} from './mongo';
 //function
 require('./func');
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 
 //set engin
 app.set('port', port);
@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //router setting
 var index = require('./routes/index')(express.Router());
 var board = require('./routes/board')(express.Router(), Boards);
-var complain = require('./routes/compain')(express.Router());
+var complain = require('./routes/complain')(express.Router(), Boards);
 
 //router setting
 app.use('/', index);
