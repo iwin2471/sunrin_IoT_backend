@@ -3,19 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="index.js"></script>
+    <script src="/public/js/index.js"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" type="../image/x-icon" href="../image/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/public/css/index.css">
     <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
 </head>
 <body>
 
-    <% for (var i = 0; i < boards.length; i++) { %>
-        <div>
-            <%= boards[i].title%></br>
-        </div>
-    <% } %>
+    <h1>현황</h1>
+
+    <table id="board">
+        <tr>
+            <th id="board-place">장소</th>
+            <th id="board-title">제목</th>
+            <th id="board-date">날짜</th>
+        </tr>
+        <% for (var i = 0; i < boards.length; i++) { %>
+            <tr id="board-tr">
+                <td>
+                    <%= boards[i].place %>
+                    <!-- 2호관 남자화장실 -->
+                </td>
+                <td>
+                    <a class="board-link" href="/complanin?id=<%= i %>">
+                        <%= boards[i].title %>
+                        <!-- 변기막힘 -->
+                    </a>
+                </td>
+                <td>
+                    <%= boards[i].date %>
+                    <!-- 3/26 -->
+                </td>
+            </tr>
+        <% } %>
+    </table>
 
 </body>
 </html>

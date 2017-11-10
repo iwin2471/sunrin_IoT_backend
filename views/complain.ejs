@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="index.js"></script>
+    <script src="/public/js/index.js"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" type="../image/x-icon" href="../image/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/public/css/index.css">
     <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
 </head>
 <body>
 
+    <h1>민원 신청</h1>
+
     <form action="/board" autocomplete="off" method="post">   <!-- action 속성의 경로를 지정하세요. -->
-        <div id="search-out">
-            <input type="text" name="title" placeholder="제목" minlength="1" />
-            <input type="text" name="place" placeholder="제목" minlength="1" />
-            <input type="text" name="context" placeholder="제목" minlength="1" />
+        <div id="complain">
+            <select name="place">
+                <% for (var i = 0; i < place.toilet.length; i++) { %>
+                    <option value="<%= place.toilet[i].name %>"><%= place.toilet[i].name %></option>
+                <% } %>
+            </select>
+            <input id="complain-title" type="text" name="title" placeholder="제목" minlength="1" />
+
+            <textarea id="complain-context" rows="5" cols="30" name="content" placeholder="내용"></textarea>
         </div>
 
-        <input type="submit">
-
-        </div>
+        <input id="complain-submit" type="submit">
     </form>
 
 </body>
