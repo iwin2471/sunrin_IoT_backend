@@ -36,11 +36,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 var index = require('./routes/index')(express.Router());
 var board = require('./routes/board')(express.Router(), Boards);
 var complain = require('./routes/complain')(express.Router(), Boards);
+var content = require('./routes/content')(express.Router());
 
 //router setting
 app.use('/', index);
 app.use('/board', board);
 app.use('/complain', complain);
+app.use('/content', content);
 
 //create server
 app.listen(port);
