@@ -10,23 +10,23 @@
 </head>
 <body>
 
-    <h1><%= board.title %><!-- 변기막힘 --></h1>
+    <h1><%= board.title %><!-- 게시물의 제목 --></h1>
 
     <div class="place">
         <i>
             <%= board.place %>
-            <!-- 1호관 1층 남자화장실 -->
+            <!-- 장소 -->
         </i>
     </div>
 
     <div class="content">
         <%= board.content %>
-        <!-- 안녕하세요저는방성훈입니다.제소개를먼저말씀드리자면대답해드리는게인지상정사랑과진실어둠을뿌리고다니는내이름은코난탐정이죠. -->
+        <!-- 게시물의 내용 -->
     </div>
 
-    <form action=" ***** 경로 *****">
+    <form action="" method="post">        <!-- POST 요청: /contents/12132 -->
         <input class="clogged" type="button" value="막힌 변기 +1" name=" ***** name ***** ">
-        <input class="clogged" type="button" value="막힌 변기 -1" name=" ***** name ***** ">
+        <input class="clogged" type="button" value="막힌 변기 -1" name=" ***** name ***** ">    <!-- 버튼을 누르면 '막힌 변기'의 수가 1 증가하거나 감소 -->
     </form>
 
 </body>
