@@ -42,7 +42,7 @@ var content = require('./routes/content')(express.Router());
 app.use('/', index);
 app.use('/board', board);
 app.use('/complain', complain);
-app.use('/content', content);
+app.use('/contents/:id', content);
 
 //create server
 app.listen(port);

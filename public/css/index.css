@@ -5,8 +5,12 @@ body {
     margin: 0;
     height: 100%;
     color: #FF848F;
-    background-color: #FFCCCC;
+    background-color: rgb(255, 224, 224);
     text-align: center;
+}
+
+a {
+    text-decoration: none;
 }
 
 #hadder {
@@ -86,7 +90,7 @@ body {
     color: #ffffff;
     font-size: 100%;
     overflow: hidden;
-    transition: all 1s;
+    transition: all 0.3s;
 }
 
 .toilet-room.on {
@@ -100,4 +104,86 @@ body {
 
 .not {
     margin-top: -2.5em;
+}
+
+#order {
+    width: 50%;
+    height: 70px;
+    background: #666666;
+    margin: auto;
+    color: #ffffff;
+    font-size: 2.5ex;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+.margin-auto {
+    margin: auto;
+}
+
+#board {
+    margin: 10% auto;
+    width: 85%;
+    text-align: left;
+}
+
+#table, th, td {
+    border-bottom: 1px solid #FF848F;
+}
+
+#board-date {
+    width: 50px;
+}
+
+#board-link {
+    color: #FF848F;
+}
+
+#board-search {
+    width: 70%;
+}
+
+#complain-title {
+    display: block;
+    margin:  0 auto 3%;
+    padding: 0 1%;
+    width: 80%;
+    font-size: 2ex;
+    line-height: 2em;
+}
+#complain-context {
+    display: block;
+    margin: 3% auto;
+    padding: 1%;
+    width: 80%;
+    line-height: 3ex;
+}
+
+#complain-submit {
+    width: 50%;
+    padding: 1% 0;
+    background: #666666;
+    color: #ffffff;
+    font-size: 2.5ex;
+}
+
+.place {
+    font-size: 1.2ex;
+    text-align: left;
+    margin: 0 8%
+}
+
+.content {
+    margin: 8%;
+}
+
+.clogged {
+    background: #666666;
+    margin: auto;
+    color: #ffffff;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
 }
